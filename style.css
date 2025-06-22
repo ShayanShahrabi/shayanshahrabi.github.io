@@ -23,24 +23,59 @@
   text-decoration: underline;
 }
 
-/* Main container */
+/* Main Container - Now Full Width for Flex Columns */
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.subtitle {
-  font-size: 1.1em;
-  color: #666;
-  margin-bottom: 1em;
+/* Flex Layout */
+.content-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-direction: row;
 }
 
+.main-column {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-left: 1px solid #ccc;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+/* Portrait */
 .portrait {
   max-width: 150px;
   border-radius: 50%;
   display: block;
   margin: 1rem 0;
+}
+
+/* Typography */
+.subtitle {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 1em;
 }
 
 blockquote {
@@ -51,21 +86,22 @@ blockquote {
   padding-left: 1rem;
 }
 
-.latest-blogs {
-  margin-top: 3rem;
-}
-
-.latest-blogs ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.latest-blogs li {
-  margin-bottom: 0.5rem;
-}
-
+/* Coming Soon Section */
 .coming-soon {
   margin-top: 3rem;
   padding-top: 1rem;
   border-top: 1px solid #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    border-left: none;
+    border-top: 1px solid #ccc;
+    margin-top: 2rem;
+  }
 }
