@@ -6,24 +6,29 @@
 }
 
 .nav-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;
 }
 
 .topnav nav a {
-  margin: 0 0.75rem;
+  margin: 0 1rem;
   text-decoration: none;
   color: #336699;
   font-weight: bold;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  transition: all 0.2s ease;
 }
 
 .topnav nav a:hover {
-  text-decoration: underline;
+  background-color: #e0ebf5;
+  text-decoration: none;
 }
 
-/* Main Container - Now Full Width for Flex Columns */
+/* Main Container - Full Width for Flex Columns */
 .container {
   max-width: 1200px;
   margin: 2rem auto;
@@ -47,6 +52,7 @@
   background-color: #f9f9f9;
   padding: 1rem;
   border-left: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 .sidebar h2 {
@@ -61,6 +67,15 @@
 
 .sidebar li {
   margin-bottom: 0.5rem;
+}
+
+.sidebar li a {
+  color: #336699;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  text-decoration: underline;
 }
 
 /* Portrait */
@@ -84,7 +99,35 @@ blockquote {
   margin: 1.5rem 0;
   border-left: 4px solid #ccc;
   padding-left: 1rem;
+  background-color: #fdfdfd;
+  border-radius: 4px;
 }
+
+/* Social Icons */
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  font-size: 1.8rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Icon Colors */
+.social-icons .email { color: #D44638; }
+.social-icons .telegram { color: #0088cc; }
+.social-icons .youtube { color: #FF0000; }
+.social-icons .linkedin { color: #0077b5; }
+.social-icons .github { color: #333; }
+
+.social-icons .email:hover { color: #a33; transform: scale(1.2); }
+.social-icons .telegram:hover { color: #006699; transform: scale(1.2); }
+.social-icons .youtube:hover { color: #cc0000; transform: scale(1.2); }
+.social-icons .linkedin:hover { color: #005582; transform: scale(1.2); }
+.social-icons .github:hover { color: #000; transform: scale(1.2); }
 
 /* Coming Soon Section */
 .coming-soon {
@@ -103,5 +146,14 @@ blockquote {
     border-left: none;
     border-top: 1px solid #ccc;
     margin-top: 2rem;
+  }
+
+  .topnav nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .social-icons {
+    justify-content: center;
   }
 }
