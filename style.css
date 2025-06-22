@@ -34,3 +34,20 @@ nav a:hover {
 hr {
   margin: 2em 0;
 }
+
+
+.social-icons {
+  margin-top: 2em;
+}
+
+.social-icons a {
+  font-size: 1.5em;
+  margin-right: 0.7em;
+  color: #336699;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #003366;
+}
