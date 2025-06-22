@@ -56,7 +56,6 @@
           <a href="https://github.com/shayanshahrabi" title="GitHub" class="github"><i class="fab fa-github"></i></a>
         </div>
 
-
         <section class="coming-soon">
           <h2>Coming Soon</h2>
           <p>Stay tuned for updates about my projects, reading logs, and more!</p>
@@ -67,15 +66,27 @@
       <aside class="sidebar">
         <h2>Latest Blogs</h2>
         <ul id="latest-blogs"></ul>
+
+        <h2>Latest Notes</h2>
+        <ul id="latest-notes"></ul>  <!-- Added this for notes -->
       </aside>
     </div>
   </main>
 
   <script>
+    // Latest blogs data
     const blogs = [
       { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
     ];
 
+    // Latest notes data
+    const notes = [
+      { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
+      // Add more notes here as needed, e.g.
+      // { title: "Another Note", url: "notes/another_note.pdf", date: "April 2025" },
+    ];
+
+    // Populate blogs list
     const blogList = document.getElementById('latest-blogs');
     blogs.forEach(blog => {
       const li = document.createElement('li');
@@ -84,6 +95,18 @@
       a.textContent = `${blog.title} – ${blog.date}`;
       li.appendChild(a);
       blogList.appendChild(li);
+    });
+
+    // Populate notes list
+    const notesList = document.getElementById('latest-notes');
+    notes.forEach(note => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = note.url;
+      a.target = "_blank"; // open notes in a new tab
+      a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
+      li.appendChild(a);
+      notesList.appendChild(li);
     });
   </script>
 </body>
