@@ -12,6 +12,49 @@ body {
   padding: 0 1rem;
 }
 
+/* New: container for main + sidebar */
+.main-with-sidebar {
+  max-width: 1000px; /* a bit wider to fit sidebar */
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 2em;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+  border-left: 1px solid #ccc;
+  padding-left: 1em;
+  max-width: 250px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.6em;
+}
+
+.sidebar ul li a {
+  color: #336699;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 2em;
   margin-bottom: 0.5em;
@@ -34,7 +77,6 @@ nav a:hover {
 hr {
   margin: 2em 0;
 }
-
 
 .social-icons {
   margin-top: 2em;
