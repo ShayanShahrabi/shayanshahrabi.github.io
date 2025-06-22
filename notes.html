@@ -5,15 +5,83 @@
   <title>Notes</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .dropdown {
+      margin-bottom: 1rem;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+      background-color: #e0f2f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dropdown-content {
+      display: none;
+      margin: 0.5rem 0 0 1rem;
+    }
+
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
+
+    .notes-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .dropdown-toggle i {
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .dropdown-toggle i {
+      transform: rotate(90deg);
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h2>Notes</h2>
-    <ul class="notes-list">
-      <li><a href="notes/RL_lecture.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Reinforcement Learning Lecture – SBU, May 2025 (PDF)</a></li>
-    </ul>
+
+    <!-- ML Course Notes -->
+    <div class="dropdown">
+      <div class="dropdown-toggle"><span>Machine Learning Course - SBU, 2025</span> <i class="fas fa-chevron-right"></i></div>
+      <ul class="dropdown-content notes-list">
+        <li><a href="notes/RL_lecture.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Reinforcement Learning Lecture</a></li>
+        
+        <li><a href="notes/RSS_TSS_ESS.pdf" target="_blank"><i class="fas fa-file-pdf"></i> A Proof of the Decomposition Identity: TSS = ESS + RSS</a></li>
+
+      </ul>
+    </div>
+
+    <!-- Data Science Notes -->
+    <div class="dropdown">
+      <div class="dropdown-toggle"><span>Data Science Course - SBU, 2025</span> <i class="fas fa-chevron-right"></i></div>
+      <ul class="dropdown-content notes-list">
+        <li><a href="#"><i class="fas fa-file-pdf"></i> Exploratory Data Analysis – April 2025</a></li>
+        <!-- Add more DS notes here -->
+      </ul>
+    </div>
+
 
     <p><a href="index.html">← Back to Home</a></p>
   </div>
+
+  <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const dropdown = toggle.parentElement;
+        dropdown.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
