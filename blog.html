@@ -1,21 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Shayan Shahrabi</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="container">
-    <h2>Blog</h2>
-    <ul>
-      <!-- Add new blog posts below by duplicating this <li> line and updating the href, title, and date -->
-      <li><a href="blog/blog1.html">Welcome to My First Blog Post</a> – 21 June 2025</li>
-      <!-- Example for adding another blog post:
-      <li><a href="blog/blog2.html">Title of Your Second Blog Post</a> – July 2025</li>
-      -->
-    </ul>
-    <a href="index.html">← Back to Home</a>
-  </div>
+  <!-- Top Navigation Bar -->
+  <header class="topnav">
+    <div class="nav-container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="blog.html">Blog</a>
+        <a href="currently-reading.html">Reading Log</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main and Sidebar Layout -->
+  <main class="container">
+    <div class="content-wrapper">
+      <!-- Main Content -->
+      <div class="main-column">
+        <h1>Blog</h1>
+        <ul>
+          <li><a href="blog/blog1.html">Welcome to My First Blog Post</a> – 21 June 2025</li>
+          <!-- Example blog entry:
+          <li><a href="blog/blog2.html">Title of Your Second Blog Post</a> – July 2025</li>
+          -->
+        </ul>
+        <p><a href="index.html">← Back to Home</a></p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Notes preview (NOTE: #latest-notes element is missing in this HTML)
+    const notes = [
+      { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
+      { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
+    ];
+
+    const notesList = document.getElementById('latest-notes');
+    if (notesList) {
+      notes.forEach(note => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = note.url;
+        a.target = "_blank";
+        a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
+        li.appendChild(a);
+        notesList.appendChild(li);
+      });
+    }
+  </script>
 </body>
 </html>

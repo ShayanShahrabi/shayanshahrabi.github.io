@@ -1,0 +1,161 @@
+/* theme.css - Mint Aqua Theme */
+
+/* General body styling */
+body {
+  background: #f0fffc;
+  font-family: 'Segoe UI', sans-serif;
+  color: #054b4a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation bar */
+.topnav {
+  background-color: #00bfa5;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.topnav nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 600;
+}
+
+.topnav nav a:hover {
+  text-decoration: underline;
+}
+
+/* Container box */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 2px solid #b2dfdb;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 191, 165, 0.1);
+}
+
+.main-column {
+  border: 2px #00bfa5;
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: #e0f7f5;
+  margin-bottom: 2rem;
+}
+
+.main-column h1,
+.sidebar h2 {
+  color: #00796b;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #004d40;
+  margin-bottom: 1rem;
+}
+
+.portrait {
+  max-width: 200px;
+  display: block;
+  margin: 1rem auto;
+  border: 3px solid #00bfa5;
+  border-radius: 50%;
+}
+
+blockquote {
+  font-style: italic;
+  color: #00695c;
+  background: #ccf2f0;
+  border-left: 5px solid #00bfa5;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  color: #00796b;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #004d40;
+  transform: scale(1.2);
+}
+
+.coming-soon {
+  margin-top: 2rem;
+  background-color: #d0fdfa;
+  padding: 1rem;
+  border: 2px solid #80cbc4;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background-color: #f1fffc;
+  border-left: 2px solid #b2dfdb;
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sidebar ul {
+  padding-left: 1rem;
+}
+
+a {
+  color: #00796b;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown Styles for Notes Page */
+.dropdown {
+  margin-bottom: 1rem;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  background-color: #e0f2f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  margin: 0.5rem 0 0 1rem;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.notes-list li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.dropdown.open .dropdown-toggle i {
+  transform: rotate(90deg);
+}
+

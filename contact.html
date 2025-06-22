@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Shayan Shahrabi</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Additional styling for contact page */
+    .contact-info {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .contact-item {
+      margin-bottom: 1rem;
+    }
+    button.copy-email-btn {
+      background: none;
+      border: none;
+      color: #00796b;
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0;
+      font-family: inherit;
+    }
+    button.copy-email-btn:hover {
+      color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="topnav">
+    <div class="nav-container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="blog.html">Blog</a>
+        <a href="currently-reading.html">Reading Log</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="main-column">
+      <h1>Contact Info</h1>
+      <p>If you want to get in touch, here’s the best way:</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>Email:</strong>
+          <button class="copy-email-btn" title="Click to copy" onclick="copyEmail()">Copy my email address</button>
+        </div>
+
+        <div class="contact-item">
+          <!-- Placeholder for Discord or other contacts -->
+          <strong>Discord & More:</strong> Coming soon!
+        </div>
+      </div>
+
+      <p><a href="index.html">← Back to Home</a></p>
+    </div>
+  </main>
+
+  <script>
+    function copyEmail() {
+      const reversedEmail = "moc.liamg@barhahsnayahs"; // reversed email
+      const email = reversedEmail.split('').reverse().join(''); // restore email
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Email copied to clipboard: shayanshahrab@gmail.com');
+      }).catch(() => {
+        alert('Failed to copy email. Please copy manually.');
+      });
+    }
+  </script>
+</body>
+</html>
