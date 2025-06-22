@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+
+% --- Packages ---
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{abstract}
+\usepackage{framed}
+
+% --- Geometry ---
+\geometry{a4paper, margin=1in}
+
+% --- Header & Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Your Name}}
+\rhead{\textbf{Topic Title}}
+\cfoot{\thepage}
+
+% --- Title formatting ---
+\titleformat{\section}{\large\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+
+% --- Spacing and Lists ---
+\setstretch{1.2}
+\setlist[itemize]{leftmargin=*, topsep=4pt}
+
+% --- Document Title ---
+\title{\textbf{\LARGE Title of the Topic Goes Here}}
+\author{\Large Your Name}
+\date{\today} % Or set a fixed date like: \date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent
+Write a concise summary of the note or derivation here. State the goal of the document and what concepts or results will be established. Keep it within 3–5 sentences.
+\end{abstract}
+
+\section{Introduction}
+
+Provide an overview of the topic. Introduce key quantities, concepts, or notation that will be used. Keep it intuitive and motivating.
+
+\begin{center}
+\begin{framed}
+\noindent\textbf{Review of [Insert Topic Here]} 
+
+\vspace{0.5em}
+Use this box to summarize a prior concept (e.g., OLS, probability axioms, etc.). These can include properties, formulas, or key steps. You can also include bullet points:
+
+\begin{itemize}
+    \item Key Point 1
+    \item Key Point 2
+    \item Key Formula: \( a^2 + b^2 = c^2 \)
+\end{itemize}
+\end{framed}
+\end{center}
+
+\section{Main Results}
+
+\subsection{Algebraic Derivation}
+
+Include derivation steps, algebraic identities, and proofs. Use equations:
+
+\[
+\text{Some Identity} = \text{Part 1} + \text{Part 2}
+\]
+
+\subsection{Geometric Interpretation}
+
+Explain geometric intuition if applicable, like projection, orthogonality, or vector space relationships.
+
+\[
+\| \mathbf{a} \|^2 = \| \mathbf{b} \|^2 + \| \mathbf{c} \|^2
+\]
+
+\section{Conclusion}
+
+Wrap up the key results, implications, or generalizations. You can also add:
+
+\begin{center}
+\begin{framed}
+\centering
+\boxed{
+\text{Final Boxed Formula or Insight Goes Here}
+}
+\end{framed}
+\end{center}
+
+\end{document}
