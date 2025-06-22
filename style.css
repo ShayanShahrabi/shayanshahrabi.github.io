@@ -1,0 +1,36 @@
+body {
+  font-family: "Georgia", serif;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+nav {
+  margin-bottom: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #336699;
+  margin-right: 0.5em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  margin: 2em 0;
+}
