@@ -9,62 +9,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="container main-with-sidebar">
+  <!-- Top Navigation Bar -->
+  <header class="topnav">
+    <div class="nav-container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="notes.html">Notes</a>
+        <a href="blog.html">Blog</a>
+        <a href="currently-reading.html">Currently Reading</a>
+        <a href="projects.html">Projects</a>
+        <a href="mailto:shayanshahrab@gmail.com">Email</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Navigation moved to top -->
-    <nav style="margin-bottom: 1.5rem; font-weight: bold;">
-      <a href="index.html">Home</a> |
-      <a href="notes.html">Notes</a> |
-      <a href="blog.html">Blog</a> |
-      <a href="currently-reading.html">Currently Reading</a> |
-      <a href="projects.html">Projects</a> |
-      <a href="mailto:shayanshahrab@gmail.com">Email</a>
-    </nav>
+  <!-- Main Content -->
+  <main class="container">
+    <h1>Shayan Shahrabi</h1>
+    <p class="subtitle"><strong>Computer Science Student | Mathematics Enthusiast</strong></p>
 
-    <div class="main-content">
-      <!-- Placeholder for your self-portrait or photo -->
-      <img src="images/self-portrait.jpg" alt="Self-portrait of Shayan Shahrabi" style="max-width:150px; border-radius:50%; margin-bottom:1rem;" />
+    <img src="images/self-portrait.jpg" alt="Self-portrait of Shayan Shahrabi" class="portrait" />
 
-      <p style="font-style: italic; margin-bottom: 1.5rem;">
-        “I Don’t Want Anymore Rules, I’m A Dreamer, I Build Worlds.”  
-        <br />— James Halliday, Ready Player One
-      </p>
+    <blockquote>
+      “I Don’t Want Anymore Rules, I’m A Dreamer, I Build Worlds.”<br />
+      — James Halliday, *Ready Player One*
+    </blockquote>
 
-      <p>Hello! I’m <strong>Shayan Shahrabi</strong>, a computer science bachelor’s student passionate about mathematics, machine learning, AI, and deep learning.</p>
+    <p>Hello! I’m <strong>Shayan Shahrabi</strong>, a computer science bachelor’s student passionate about mathematics, machine learning, AI, and deep learning.</p>
 
-      <p>I share my <a href="notes.html">notes</a> on various courses I study, teach, or research. Outside of academia, I’m an amateur photographer who enjoys painting, music, and collecting watches.</p>
+    <p>
+      I share <a href="notes.html">notes</a> on various courses I study, teach, or research. Outside of academics, I enjoy photography (just for fun), painting, music, and collecting watches.
+    </p>
 
-      <p>Feel free to explore my <a href="blog.html">blog</a> where I plan to add a “readings” section to discuss books and materials I’m currently studying.</p>
+    <p>
+      I’m planning to add a <a href="currently-reading.html">reading log</a> to talk about things I’ve recently studied or read, and a <a href="projects.html">projects</a> section to showcase my work.
+    </p>
 
-      <div class="social-icons" style="margin-top: 1rem;">
-        <a href="mailto:shayanshahrab@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://t.me/shayanshahrabi_channel" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://www.youtube.com/@shyshfa" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/in/shayanshahrabi" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shayanshahrabi" title="GitHub"><i class="fab fa-github"></i></a>
-      </div>
-      
-      <!-- Placeholder for future edits -->
-      <section style="margin-top: 3rem; border-top: 1px solid #ccc; padding-top: 1rem;">
-        <h2>Coming Soon</h2>
-        <p>Stay tuned for updates about my projects, readings, and more!</p>
-      </section>
+    <div class="social-icons">
+      <a href="mailto:shayanshahrab@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://t.me/shayanshahrabi_channel" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://www.youtube.com/@shyshfa" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/shayanshahrabi" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/shayanshahrabi" title="GitHub"><i class="fab fa-github"></i></a>
     </div>
 
-    <aside class="sidebar">
-      <h3>Latest Blogs</h3>
-      <ul id="latest-blogs">
-        <!-- Latest blog posts will be inserted here by JavaScript -->
-      </ul>
-    </aside>
-  </div>
+    <section class="latest-blogs">
+      <h2>Latest Blogs</h2>
+      <ul id="latest-blogs"></ul>
+    </section>
+
+    <section class="coming-soon">
+      <h2>Coming Soon</h2>
+      <p>Stay tuned for updates about my projects, reading logs, and more!</p>
+    </section>
+  </main>
 
   <script>
-    // List of blog posts - update as you add more
     const blogs = [
       { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
-      // Add more blogs here like:
-      // { title: "My Second Post", url: "blog/blog2.html", date: "July 2025" },
     ];
 
     const blogList = document.getElementById('latest-blogs');

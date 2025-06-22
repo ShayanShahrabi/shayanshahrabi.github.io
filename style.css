@@ -1,95 +1,71 @@
-body {
-  font-family: "Georgia", serif;
-  background-color: #fdfdfd;
-  color: #333;
-  margin: 0;
-  padding: 0;
+/* Top Navigation */
+.topnav {
+  background-color: #f5f5f5;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
 }
 
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.topnav nav a {
+  margin: 0 0.75rem;
+  text-decoration: none;
+  color: #336699;
+  font-weight: bold;
+}
+
+.topnav nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main container */
 .container {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* New: container for main + sidebar */
-.main-with-sidebar {
-  max-width: 1000px; /* a bit wider to fit sidebar */
-  margin: 2rem auto;
-  padding: 0 1rem;
-  display: flex;
-  gap: 2em;
-}
-
-.main-content {
-  flex: 3;
-}
-
-.sidebar {
-  flex: 1;
-  border-left: 1px solid #ccc;
-  padding-left: 1em;
-  max-width: 250px;
-}
-
-.sidebar h3 {
-  margin-top: 0;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 0.6em;
-}
-
-.sidebar ul li a {
-  color: #336699;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
-}
-
-nav {
+.subtitle {
+  font-size: 1.1em;
+  color: #666;
   margin-bottom: 1em;
 }
 
-nav a {
-  text-decoration: none;
-  color: #336699;
-  margin-right: 0.5em;
+.portrait {
+  max-width: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 1rem 0;
 }
 
-nav a:hover {
-  text-decoration: underline;
+blockquote {
+  font-style: italic;
+  color: #555;
+  margin: 1.5rem 0;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
 }
 
-hr {
-  margin: 2em 0;
+.latest-blogs {
+  margin-top: 3rem;
 }
 
-.social-icons {
-  margin-top: 2em;
+.latest-blogs ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-.social-icons a {
-  font-size: 1.5em;
-  margin-right: 0.7em;
-  color: #336699;
-  text-decoration: none;
-  transition: color 0.2s;
+.latest-blogs li {
+  margin-bottom: 0.5rem;
 }
 
-.social-icons a:hover {
-  color: #003366;
+.coming-soon {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
 }
