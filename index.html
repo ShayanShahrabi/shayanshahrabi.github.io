@@ -11,18 +11,8 @@
 </head>
 <body>
   <!-- Top Navigation Bar -->
-  <header class="topnav">
-    <div class="nav-container">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="notes.html">Notes</a>
-        <a href="blog.html">Blog</a>
-        <a href="currently-reading.html">Reading Log</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
+  <header class="topnav" id="navbar-placeholder"></header>
+
 
   <!-- Main and Sidebar Layout -->
   <main class="container">
@@ -39,14 +29,25 @@
           — James Halliday, <em>Ready Player One</em>
         </blockquote>
 
-        <p>Hello! I’m <strong>Shayan Shahrabi</strong>, a computer science bachelor’s student passionate about mathematics, machine learning, AI, and deep learning.</p>
-
         <p>
-          I share <a href="notes.html">notes</a> on various courses I study, teach, or research. Outside of academics, I enjoy photography (just for fun), painting, music, and collecting watches.
+          Hello! I’m <strong>Shayan Shahrabi</strong>, a computer science bachelor’s student passionate about machine learning, artificial intelligence, and deep learning.
         </p>
 
         <p>
-          I’m planning to add a <a href="currently-reading.html">reading log</a> to talk about things I’ve recently studied or read, and a <a href="projects.html">projects</a> section to showcase my work.
+          On this site, I publish <a href="notes.html">notes</a> from courses I've taken, taught, or studied independently — spanning computer science, mathematics, and beyond.
+        </p>
+
+        <p>
+          I share thoughts, experiences, and deep dives through my <a href="blog.html">blog</a>, and highlight selected <a href="projects.html">projects</a> including educational tutorials, algorithmic challenges, and learning resources.
+        </p>
+
+        <p>
+          You’ll also find a growing <a href="currently-reading.html">reading log</a> where I reflect on books, academic papers, and blogs I'm currently engaging with.
+        </p>
+
+        <p>
+          Fill free to reach out if you have any questions, suggestions, or just want to connect. 
+          I highly enjoy discussions about computer science, mathematics, and technology in general!
         </p>
 
         <div class="social-icons">
@@ -55,11 +56,7 @@
           <a href="https://www.linkedin.com/in/shayanshahrabi" title="LinkedIn" class="linkedin"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/shayanshahrabi" title="GitHub" class="github"><i class="fab fa-github"></i></a>
         </div>
-
-        <section class="coming-soon">
-          <h2>Coming Soon</h2>
-          <p>Stay tuned for updates about my projects, reading logs, and more!</p>
-        </section>
+        
       </div>
 
       <!-- Sidebar -->
@@ -69,7 +66,6 @@
 
         <h2>Latest Notes</h2>
         <ul id="latest-notes"></ul>
-
       </aside>
     </div>
   </main>
@@ -103,6 +99,14 @@
       li.appendChild(a);
       notesList.appendChild(li);
     });
+  
+  fetch('navigation_bar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading navigation bar:', error));
   </script>
+
 </body>
 </html>
