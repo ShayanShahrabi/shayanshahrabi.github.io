@@ -157,3 +157,7 @@ blockquote {
     justify-content: center;
   }
 }
+.lecture-notes {
+  text-align: justify;
+}
+
