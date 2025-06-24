@@ -27,9 +27,6 @@
         </ul>
         <p><a href="index.html">← Back to Home</a></p>
       </div>
-
-      <!-- Sidebar -->
-      <div id="sidebar-placeholder"></div>
     </div>
   </main>
 
@@ -42,32 +39,24 @@
       })
       .catch(error => console.error('Error loading navigation bar:', error));
 
-    // Load the sidebar dynamically
-    fetch('sidebar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('sidebar-placeholder').innerHTML = data;
+    // Notes preview (only runs if #latest-notes exists)
+    const notes = [
+      { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
+      { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
+    ];
 
-        // After sidebar is loaded, populate latest notes in the sidebar if present
-        const notes = [
-          { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
-          { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
-        ];
-
-        const notesList = document.getElementById('latest-notes');
-        if (notesList) {
-          notes.forEach(note => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = note.url;
-            a.target = "_blank";
-            a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
-            li.appendChild(a);
-            notesList.appendChild(li);
-          });
-        }
-      })
-      .catch(error => console.error('Error loading sidebar:', error));
+    const notesList = document.getElementById('latest-notes');
+    if (notesList) {
+      notes.forEach(note => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = note.url;
+        a.target = "_blank";
+        a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
+        li.appendChild(a);
+        notesList.appendChild(li);
+      });
+    }
   </script>
 </body>
 </html>
