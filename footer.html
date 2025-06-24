@@ -1,0 +1,20 @@
+<footer style="text-align:center; margin-top: 2em; font-size: 0.9em; color: #666;">
+  <p id="last-updated"></p>
+  <p>&copy; 2023 - <span id="current-year"></span> Shayan Shahrabi. All rights reserved.</p>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Last modified date
+      const lastMod = new Date(document.lastModified);
+      document.getElementById('last-updated').textContent =
+        "Last updated: " + lastMod.toLocaleDateString(undefined, {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+
+      // Current year for copyright
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
+  </script>
+</footer>
