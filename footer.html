@@ -1,17 +1,9 @@
 <footer style="text-align:center; margin-top: 2em; font-size: 0.9em; color: #666;">
-  <p id="last-edited"></p>
+  <p id="last-edited">Last edited: June 23, 2025</p>
   <p>&copy; <span id="start-year">2023</span><span id="year-range"></span> Shayan Shahrabi. All rights reserved.</p>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const lastMod = new Date(document.lastModified);
-      document.getElementById('last-edited').textContent =
-        "Last edited: " + lastMod.toLocaleDateString(undefined, {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-
       const startYear = 2023;
       const currentYear = new Date().getFullYear();
       const yearRange = currentYear > startYear ? ` - ${currentYear}` : '';
