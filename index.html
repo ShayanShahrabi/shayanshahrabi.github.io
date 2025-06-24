@@ -13,7 +13,6 @@
   <!-- Top Navigation Bar -->
   <header class="topnav" id="navbar-placeholder"></header>
 
-
   <!-- Main and Sidebar Layout -->
   <main class="container">
     <div class="content-wrapper">
@@ -56,57 +55,29 @@
           <a href="https://www.linkedin.com/in/shayanshahrabi" title="LinkedIn" class="linkedin"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/shayanshahrabi" title="GitHub" class="github"><i class="fab fa-github"></i></a>
         </div>
-        
       </div>
 
       <!-- Sidebar -->
-      <aside class="sidebar">
-        <h2>Latest Blogs</h2>
-        <ul id="latest-blogs"></ul>
-
-        <h2>Latest Notes</h2>
-        <ul id="latest-notes"></ul>
-      </aside>
+      <div id="sidebar-placeholder"></div>
     </div>
   </main>
 
   <script>
-    const blogs = [
-      { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
-    ];
-    const notes = [
-      { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
-      { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
-    ];
+    // Load navigation bar
+    fetch('navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
 
-    const blogList = document.getElementById('latest-blogs');
-    blogs.forEach(blog => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = blog.url;
-      a.textContent = `${blog.title} – ${blog.date}`;
-      li.appendChild(a);
-      blogList.appendChild(li);
-    });
-
-    const notesList = document.getElementById('latest-notes');
-    notes.forEach(note => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = note.url;
-      a.target = "_blank";
-      a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
-      li.appendChild(a);
-      notesList.appendChild(li);
-    });
-  
-  fetch('navigation_bar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading navigation bar:', error));
+    // Load sidebar
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
   </script>
-
 </body>
 </html>

@@ -31,6 +31,12 @@
     button.copy-email-btn:hover {
       color: #004d40;
     }
+    .copy-confirmation {
+      color: green;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -47,6 +53,10 @@
         <div class="contact-item">
           <strong>Email:</strong>
           <button class="copy-email-btn" title="Click to copy" onclick="copyEmail()">Copy my email address</button>
+          <div id="copy-confirmation" class="copy-confirmation">Email copied to clipboard!</div>
+          <noscript>
+            <p>Email: <a href="mailto:shayanshahrab@gmail.com">shayanshahrab@gmail.com</a></p>
+          </noscript>
         </div>
 
         <div class="contact-item">
@@ -68,12 +78,14 @@
       })
       .catch(error => console.error('Error loading navigation bar:', error));
 
-    // Email copy functionality
+    // Email copy functionality with transient confirmation
     function copyEmail() {
       const reversedEmail = "moc.liamg@barhahsnayahs";
       const email = reversedEmail.split('').reverse().join('');
       navigator.clipboard.writeText(email).then(() => {
-        alert('Email copied to clipboard: shayanshahrab@gmail.com');
+        const confirmation = document.getElementById('copy-confirmation');
+        confirmation.style.display = 'inline';
+        setTimeout(() => confirmation.style.display = 'none', 3000);
       }).catch(() => {
         alert('Failed to copy email. Please copy manually.');
       });

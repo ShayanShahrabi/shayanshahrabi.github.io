@@ -13,82 +13,129 @@
   <!-- Top Navigation Bar -->
   <header class="topnav" id="navbar-placeholder"></header>
 
-  <!-- Main Content -->
+  <!-- Main and Sidebar Layout -->
   <main class="container">
-    <div class="main-column">
-      <h1>Reading Log</h1>
-      <p>This section includes thoughts, summaries, and reflections on books, papers, blogs, and articles I’m currently reading or have recently read.</p>
+    <div class="content-wrapper">
+      <!-- Main Content -->
+      <div class="main-column">
+        <h1>Reading Log</h1>
+        <p>This section includes thoughts, summaries, and reflections on books, papers, blogs, and articles I’m currently reading or have recently read.</p>
 
-      <!-- Books -->
-      <section>
-        <h2><i class="fas fa-book"></i> Books</h2>
-        <ul class="reading-list">
-          <li>
-            <a href="reading_log/ready-player-one.html">
-              📘 <strong>Ready Player One</strong> by Ernest Cline
-            </a>
-          </li>
-          <!-- Add more book entries here -->
-        </ul>
-      </section>
+        <!-- Books -->
+        <section>
+          <h2><i class="fas fa-book"></i> Books</h2>
+          <ul class="reading-list">
+            <li>
+              <a href="reading_log/ready-player-one.html">
+                📘 <strong>Ready Player One</strong> by Ernest Cline
+              </a>
+            </li>
+            <!-- Add more book entries here -->
+          </ul>
+        </section>
 
-      <!-- Papers -->
-      <section>
-        <h2><i class="fas fa-file-alt"></i> Papers</h2>
-        <ul class="reading-list">
-          <!-- Example:
-          <li>
-            <a href="reading_log/attention-is-all-you-need.html">
-              📄 <strong>Attention Is All You Need</strong> – Vaswani et al.
-            </a>
-            <span class="reading-date">– Reviewed: May 2025</span>
-          </li>
-          -->
-        </ul>
-      </section>
+        <!-- Papers -->
+        <section>
+          <h2><i class="fas fa-file-alt"></i> Papers</h2>
+          <ul class="reading-list">
+            <!-- Example:
+            <li>
+              <a href="reading_log/attention-is-all-you-need.html">
+                📄 <strong>Attention Is All You Need</strong> – Vaswani et al.
+              </a>
+              <span class="reading-date">– Reviewed: May 2025</span>
+            </li>
+            -->
+          </ul>
+        </section>
 
-      <!-- Blog Posts -->
-      <section>
-        <h2><i class="fas fa-pen"></i> Blog Posts</h2>
-        <ul class="reading-list">
-          <!-- Example:
-          <li>
-            <a href="reading_log/some-interesting-blog.html">
-              📝 <strong>Interesting Thoughts on ML</strong> – Blog Author
-            </a>
-            <span class="reading-date">– Read: April 2025</span>
-          </li>
-          -->
-        </ul>
-      </section>
+        <!-- Blog Posts -->
+        <section>
+          <h2><i class="fas fa-pen"></i> Blog Posts</h2>
+          <ul class="reading-list">
+            <!-- Example:
+            <li>
+              <a href="reading_log/some-interesting-blog.html">
+                📝 <strong>Interesting Thoughts on ML</strong> – Blog Author
+              </a>
+              <span class="reading-date">– Read: April 2025</span>
+            </li>
+            -->
+          </ul>
+        </section>
 
-      <!-- Articles -->
-      <section>
-        <h2><i class="fas fa-newspaper"></i> Articles</h2>
-        <ul class="reading-list">
-          <!-- Example:
-          <li>
-            <a href="reading_log/wired-ai-ethics.html">
-              📰 <strong>AI Ethics in Practice</strong> – Wired Magazine
-            </a>
-            <span class="reading-date">– Read: March 2025</span>
-          </li>
-          -->
-        </ul>
-      </section>
+        <!-- Articles -->
+        <section>
+          <h2><i class="fas fa-newspaper"></i> Articles</h2>
+          <ul class="reading-list">
+            <!-- Example:
+            <li>
+              <a href="reading_log/wired-ai-ethics.html">
+                📰 <strong>AI Ethics in Practice</strong> – Wired Magazine
+              </a>
+              <span class="reading-date">– Read: March 2025</span>
+            </li>
+            -->
+          </ul>
+        </section>
 
-      <p><a href="index.html">← Back to Home</a></p>
+        <p><a href="index.html">← Back to Home</a></p>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar-placeholder"></aside>
     </div>
   </main>
 
   <script>
-    // Load navigation bar from external HTML
+    // Load navigation bar dynamically
     fetch('navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
       })
       .catch(error => console.error('Error loading navigation bar:', error));
+
+    // Load sidebar dynamically and populate notes and blogs
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar-placeholder').innerHTML = data;
+
+        const blogs = [
+          { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
+        ];
+        const notes = [
+          { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
+          { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
+        ];
+
+        const blogList = document.getElementById('latest-blogs');
+        if (blogList) {
+          blogs.forEach(blog => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = blog.url;
+            a.textContent = `${blog.title} – ${blog.date}`;
+            li.appendChild(a);
+            blogList.appendChild(li);
+          });
+        }
+
+        const notesList = document.getElementById('latest-notes');
+        if (notesList) {
+          notes.forEach(note => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = note.url;
+            a.target = "_blank";
+            a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
+            li.appendChild(a);
+            notesList.appendChild(li);
+          });
+        }
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
   </script>
 </body>
 </html>
