@@ -11,18 +11,7 @@
 </head>
 <body>
   <!-- Top Navigation Bar -->
-  <header class="topnav">
-    <div class="nav-container">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="notes.html">Notes</a>
-        <a href="blog.html">Blog</a>
-        <a href="currently-reading.html">Reading Log</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
+  <header class="topnav" id="navbar-placeholder"></header>
 
   <!-- Main Content -->
   <main class="container">
@@ -91,5 +80,15 @@
       <p><a href="index.html">← Back to Home</a></p>
     </div>
   </main>
+
+  <script>
+    // Load navigation bar from external HTML
+    fetch('navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
+  </script>
 </body>
 </html>

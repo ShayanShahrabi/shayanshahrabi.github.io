@@ -11,18 +11,7 @@
 </head>
 <body>
   <!-- Top Navigation Bar -->
-  <header class="topnav">
-    <div class="nav-container">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="notes.html">Notes</a>
-        <a href="blog.html">Blog</a>
-        <a href="currently-reading.html">Reading Log</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
+  <header class="topnav" id="navbar-placeholder"></header>
 
   <!-- Main and Sidebar Layout -->
   <main class="container">
@@ -53,7 +42,17 @@
     </div>
   </main>
 
+  <!-- JavaScript -->
   <script>
+    // Load the navigation bar dynamically
+    fetch('navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
+
+    // Dropdown toggling
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', () => {
         const dropdown = toggle.parentElement;
@@ -61,18 +60,7 @@
       });
     });
 
-    const blogs = [
-      { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
-    ];
-    const blogList = document.getElementById('latest-blogs');
-    blogs.forEach(blog => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = blog.url;
-      a.textContent = `${blog.title} – ${blog.date}`;
-      li.appendChild(a);
-      blogList.appendChild(li);
-    });
+    
   </script>
 </body>
 </html>

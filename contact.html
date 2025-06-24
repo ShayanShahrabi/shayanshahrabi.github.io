@@ -35,18 +35,7 @@
 </head>
 <body>
   <!-- Top Navigation Bar -->
-  <header class="topnav">
-    <div class="nav-container">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="notes.html">Notes</a>
-        <a href="blog.html">Blog</a>
-        <a href="currently-reading.html">Reading Log</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <header class="topnav" id="navbar-placeholder"></header>
 
   <!-- Main Content -->
   <main class="container">
@@ -71,9 +60,18 @@
   </main>
 
   <script>
+    // Load navigation bar from external file
+    fetch('navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
+
+    // Email copy functionality
     function copyEmail() {
-      const reversedEmail = "moc.liamg@barhahsnayahs"; // reversed email
-      const email = reversedEmail.split('').reverse().join(''); // restore email
+      const reversedEmail = "moc.liamg@barhahsnayahs";
+      const email = reversedEmail.split('').reverse().join('');
       navigator.clipboard.writeText(email).then(() => {
         alert('Email copied to clipboard: shayanshahrab@gmail.com');
       }).catch(() => {

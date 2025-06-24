@@ -11,18 +11,7 @@
 </head>
 <body>
   <!-- Top Navigation Bar -->
-  <header class="topnav">
-    <div class="nav-container">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="notes.html">Notes</a>
-        <a href="blog.html">Blog</a>
-        <a href="currently-reading.html">Reading Log</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact Me</a>
-      </nav>
-    </div>
-  </header>
+  <header class="topnav" id="navbar-placeholder"></header>
 
   <!-- Main and Sidebar Layout -->
   <main class="container">
@@ -42,7 +31,15 @@
   </main>
 
   <script>
-    // Notes preview (NOTE: #latest-notes element is missing in this HTML)
+    // Load navigation bar from external HTML file
+    fetch('navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
+
+    // Notes preview (only runs if #latest-notes exists)
     const notes = [
       { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
       { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
