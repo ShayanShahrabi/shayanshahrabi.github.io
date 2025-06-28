@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>An Introduction to Git and Github – Shayan Shahrabi</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="topnav" id="navbar-placeholder"></header>
+
+  <main class="container">
+    <div class="content-wrapper">
+      <div class="main-column">
+        <h1>An Introduction to Git and Github – SBU, February 2025</h1>
+        <p style="text-align: justify;">
+          The resources and materials presented during the 
+          lecture on <strong>Git and GitHub</strong> at <strong>Shahid Beheshti University (SBU)</strong>. 
+          The lecture was accompanied by instructional slides, and supplementary video content was 
+          made available afterward to further support students’ understanding of the concepts.
+        </p>
+        <ul class="notes-list">
+          <li>
+            <a href="An_Intro_to_Git_and_Github.pdf" target="_blank">
+              <i class="fas fa-file-pdf"></i> Lecture Slides (pdf)
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/i409qH5oxgE?si=fyIqpVbMw3LzeHSC" target="_blank">
+              <i class="fas fa-video"></i> 1. Intro to Git and How to Use It Locally (Persian)
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/6qx7t3ij1_k?si=E5OEJyyLPJ-YxQ1A" target="_blank">
+              <i class="fas fa-video"></i> 2. How to Move a Project from My PC to GitHub? (Persian)
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/A23JGtJcJQA?si=7ONbIx6hFh-FDbr1" target="_blank">
+              <i class="fas fa-video"></i> 3. Part 2 Reversed! Moving a Project from GitHub to My PC (Persian)
+            </a>
+          </li>
+        </ul>
+        <p><a href="../lecture_notes.html">← Back to Lecture Notes</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align:center; margin-top: 2em; font-size: 0.9em; color: #666;">
+    <p>&copy; 2025 Shayan Shahrabi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('../navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
+  </script>
+</body>
+</html>

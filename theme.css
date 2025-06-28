@@ -118,13 +118,16 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Dropdown Styles for Notes Page */
+/* Dropdown container spacing */
 .dropdown {
   margin-bottom: 1rem;
 }
 
-.dropdown-toggle {
-  cursor: pointer;
+/* Style the clickable link replacing dropdown toggle */
+.dropdown-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: bold;
   font-size: 1.1rem;
   padding: 0.5rem;
@@ -133,29 +136,27 @@ a:hover {
   border-radius: 5px;
   width: 100%;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: #054b4a;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.dropdown-content {
-  display: none;
-  margin: 0.5rem 0 0 1rem;
+.dropdown-link:hover {
+  background-color: #cce8e6;
+  text-decoration: none;
 }
 
-.dropdown.open .dropdown-content {
-  display: block;
-}
-
-.notes-list li {
-  margin-bottom: 0.5rem;
-}
-
-.dropdown-toggle i {
+.dropdown-link i {
+  margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
 
-.dropdown.open .dropdown-toggle i {
-  transform: rotate(90deg);
+/* On hover, move the arrow icon slightly right */
+.dropdown-link:hover i {
+  transform: translateX(5px);
 }
 
+/* List inside the lecture notes pages remains unchanged */
+.notes-list li {
+  margin-bottom: 0.5rem;
+}
