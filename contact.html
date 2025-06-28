@@ -50,7 +50,6 @@
         </div>
 
         <div class="contact-item">
-          <!-- Placeholder for Discord or other contacts -->
           <strong>Discord & More:</strong> Coming soon!
         </div>
       </div>
@@ -58,6 +57,19 @@
       <p><a href="index.html">← Back to Home</a></p>
     </div>
   </main>
+
+  <!-- Footer -->
+  <footer style="text-align:center; margin-top: 2em; font-size: 0.9em; color: #666;">
+    <p>&copy; <span id="start-year">2025</span><span id="year-range"></span> Shayan Shahrabi. All rights reserved.</p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startYear = 2023;
+        const currentYear = new Date().getFullYear();
+        const yearRange = currentYear > startYear ? ` - ${currentYear}` : '';
+        document.getElementById('year-range').textContent = yearRange;
+      });
+    </script>
+  </footer>
 
   <script>
     // Load navigation bar from external file
