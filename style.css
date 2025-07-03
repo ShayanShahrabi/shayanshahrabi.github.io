@@ -161,3 +161,35 @@ blockquote {
   text-align: justify;
 }
 
+.project-card {
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+.note-card {
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}

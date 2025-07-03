@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shayan Shahrabi</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon01.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -13,8 +13,7 @@
   <!-- Top Navigation Bar -->
   <header class="topnav" id="navbar-placeholder"></header>
 
-
-  <!-- Main and Sidebar Layout -->
+  <!-- Main Layout without Sidebar -->
   <main class="container">
     <div class="content-wrapper">
       <!-- Main Content -->
@@ -51,20 +50,11 @@
           <a href="https://www.linkedin.com/in/shayanshahrabi" title="LinkedIn" class="linkedin"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/shayanshahrabi" title="GitHub" class="github"><i class="fab fa-github"></i></a>
         </div>
-        
       </div>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <h2>Latest Blogs</h2>
-        <ul id="latest-blogs"></ul>
-
-        <h2>Latest Notes</h2>
-        <ul id="latest-notes"></ul>
-      </aside>
     </div>
   </main>
 
+  <!-- Blog & Notes Logic -->
   <script>
     const blogs = [
       { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
@@ -74,37 +64,47 @@
       { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
     ];
 
-    const blogList = document.getElementById('latest-blogs');
-    blogs.forEach(blog => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = blog.url;
-      a.textContent = `${blog.title} – ${blog.date}`;
-      li.appendChild(a);
-      blogList.appendChild(li);
-    });
+    const renderContent = () => {
+      // This can remain if you still want to render blog and notes lists elsewhere
+      const blogList = document.getElementById('latest-blogs');
+      if (blogList) {
+        blogs.forEach(blog => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = blog.url;
+          a.textContent = `${blog.title} – ${blog.date}`;
+          li.appendChild(a);
+          blogList.appendChild(li);
+        });
+      }
 
-    const notesList = document.getElementById('latest-notes');
-    notes.forEach(note => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = note.url;
-      a.target = "_blank";
-      a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
-      li.appendChild(a);
-      notesList.appendChild(li);
-    });
-  
-  fetch('navigation_bar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading navigation bar:', error));
+      const notesList = document.getElementById('latest-notes');
+      if (notesList) {
+        notes.forEach(note => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = note.url;
+          a.target = "_blank";
+          a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
+          li.appendChild(a);
+          notesList.appendChild(li);
+        });
+      }
+    };
+
+    // Removed sidebar loading fetch
+
+    // Load navbar
+    fetch('navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
   </script>
 
+  <!-- Footer -->
   <div id="footer-placeholder"></div>
-
   <script>
     fetch('footer.html')
       .then(response => response.text())
@@ -116,7 +116,5 @@
       });
   </script>
 
-
 </body>
 </html>
-
