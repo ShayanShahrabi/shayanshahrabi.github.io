@@ -64,13 +64,13 @@
         </ul>
       </section>
 
-      <p><a href="../../projects.html">← Back to Projects</a></p>
+      <p><a href="/Projects/projects.html">← Back to Projects</a></p>
     </div>
   </main>
 
   <script>
     // Load navigation bar from external HTML
-    fetch('../../navigation_bar.html')
+    fetch('/layout/navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;

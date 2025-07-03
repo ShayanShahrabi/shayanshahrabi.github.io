@@ -52,7 +52,7 @@
   <!-- JavaScript -->
   <script>
     // Load the navigation bar dynamically
-    fetch('/navigation_bar.html')
+    fetch('/layout/navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
