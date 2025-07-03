@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Talks – Shayan Shahrabi</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="theme.css" />
+  <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -22,16 +22,16 @@
         <p>Here, you'll find materials from my talks on a variety of topics—primarily centered around computer science, with a strong focus on machine learning.</p>
 
         <!-- RL Lecture Note -->
-        <a href="talks/intro_to_RL/intro_to_RL.html" class="note-card" target="_self">
+        <a href="/talks/intro_to_RL/intro_to_RL.html" class="note-card" target="_self">
           <strong>An Introduction to Reinforcement Learning – SBU, June 2025</strong>
         </a>
 
         <!-- Git/Github Lecture Note -->
-        <a href="talks/git_2025/an_intro_to_git_and_github.html" class="note-card" target="_self">
+        <a href="/talks/git_2025/an_intro_to_git_and_github.html" class="note-card" target="_self">
           <strong>An Introduction to Git and Github – SBU, February 2025</strong>
         </a>
 
-        <p><a href="index.html">← Back to Home</a></p>
+        <p><a href="/index.html">← Back to Home</a></p>
       </div>
     </div>
   </main>
@@ -52,7 +52,7 @@
   <!-- JavaScript -->
   <script>
     // Load the navigation bar dynamically
-    fetch('navigation_bar.html')
+    fetch('/navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
