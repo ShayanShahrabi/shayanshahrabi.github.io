@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Notes – Shayan Shahrabi</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="theme.css" />
+  <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -37,7 +37,7 @@
           </ul>
         </div>
 
-        <p><a href="index.html">← Back to Home</a></p>
+        <p><a href="/index.html">← Back to Home</a></p>
       </div>
     </div>
   </main>
@@ -59,7 +59,7 @@
   <!-- JavaScript -->
   <script>
     // Load the navigation bar dynamically
-    fetch('navigation_bar.html')
+    fetch('/layout/navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;

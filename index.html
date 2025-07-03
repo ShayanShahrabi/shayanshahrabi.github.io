@@ -95,7 +95,7 @@
     // Removed sidebar loading fetch
 
     // Load navbar
-    fetch('navigation_bar.html')
+    fetch('/layout/navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
