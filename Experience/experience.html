@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience</title>
+  <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/experience.css" />
+  <style>
+    /* Align date to right on the same line as the title */
+    .experience-item {
+      margin-bottom: 2em;
+    }
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5em;
+    }
+    .experience-date {
+      font-style: italic;
+      color: #666;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="topnav" id="navbar-placeholder"></header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="main-column">
+      <h1>Experience</h1>
+
+      <h2>Teaching Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <div class="experience-header">
+            <strong>Fundamentals of Computing Systems (SBU, <a href="https://scholar.google.com/citations?user=g923zsoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Dr. Tabibian</a>)</strong>
+            <span class="experience-date">February 2025 – Present</span>
+          </div>
+          <p>
+            Since February 2025, I have been actively collaborating with a dedicated team of six members to design comprehensive lab assignments and produce educational video content aimed at deepening students' understanding of assembly programming language and Arduino. Our collective efforts focus on making complex concepts accessible and engaging, thereby significantly enhancing the overall learning experience in this fundamental computing systems course.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <strong>Graph Theory (SBU, Dr. Tahmasbi)</strong>
+            <span class="experience-date">October 2024 – January 2025</span>
+          </div>
+          <p>
+            During my tenure as a teaching assistant for the Graph Theory course, I contributed as part of a six-member team to facilitate student learning through carefully prepared resources and problem-solving sessions. I was responsible for leading two interactive sessions designed to strengthen students' problem-solving skills, while also curating and maintaining supplementary materials accessible via an online repository, which supported students’ mastery of the subject matter.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <strong>Advanced Computer Programming (SBU, Dr. Kheradpisheh)</strong>
+            <span class="experience-date">February 2024 – June 2024</span>
+          </div>
+          <p>
+            As one of the four lead teaching assistants among a team of twelve, I played a pivotal role in guiding the Advanced Computer Programming course. I led instructional sessions focused on practical skills like using Git and GitHub, contributed to the evaluation process as a member of the judging panel for mid-term projects, and proposed innovative coding assignments covering introductory topics on multithreading and networking. Additionally, I led a small team of three students through their final project, which successfully earned a perfect score under my mentorship.
+          </p>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <strong>Fundamentals of Computer and Programming (SBU, Dr. Kheradpisheh)</strong>
+            <span class="experience-date">October 2023 – January 2024</span>
+          </div>
+          <p>
+            In this course, I contributed as part of an eleven-member mentoring team, focusing on foundational programming concepts. My responsibilities included preparing detailed teaching materials on recursive functions and file handling in C++. I also developed and presented coding assignments with accompanying solution videos tailored for a class of 40 students. Throughout six workshop sessions, I provided mentorship on topics including algorithmic thinking, C++ functions, pointers, recursion, and file processing. Furthermore, I led two student teams, each consisting of two members, successfully guiding them to achieve full marks on their final course projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align:center; margin-top: 2em; font-size: 0.9em; color: #666;">
+    <p>&copy; <span id="start-year">2025</span><span id="year-range"></span> Shayan Shahrabi. All rights reserved.</p>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startYear = 2023;
+        const currentYear = new Date().getFullYear();
+        const yearRange = currentYear > startYear ? ` - ${currentYear}` : '';
+        document.getElementById('year-range').textContent = yearRange;
+      });
+    </script>
+  </footer>
+
+  <script>
+    // Load navigation bar from external HTML
+    fetch('/layout/navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navigation bar:', error));
+  </script>
+</body>
+</html>

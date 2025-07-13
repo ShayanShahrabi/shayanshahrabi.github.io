@@ -28,7 +28,7 @@
             </a>
           </li>
         </ul>
-        <p><a href="/talks.html">← Back to Lecture Notes</a></p>
+        <p><a href="/Talks/talks.html">← Back to Lecture Notes</a></p>
       </div>
     </div>
   </main>
@@ -38,7 +38,7 @@
   </footer>
 
   <script>
-    fetch('/navigation_bar.html')
+    fetch('/layout/navigation_bar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
