@@ -3,37 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Shayan Shahrabi</title>
+  <title>AI Olympiad – Shayan Shahrabi</title>
   <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/theme.css" />
   <link rel="stylesheet" href="/sidebar/sidebar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    /* Additional styling for contact page */
-    .contact-info {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    .contact-item {
-      margin-bottom: 1rem;
-    }
-    button.copy-email-btn {
-      background: none;
-      border: none;
-      color: #00796b;
-      text-decoration: underline;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0;
-      font-family: inherit;
-    }
-    button.copy-email-btn:hover {
-      color: #004d40;
-    }
-  </style>
 </head>
+
 <body>
   <!-- Top Navigation Bar -->
   <header class="topnav" id="navbar-placeholder"></header>
@@ -43,25 +20,22 @@
     <div class="content-wrapper">
       <!-- Main Content -->
       <div class="main-column">
-        <h1>Contact Info</h1>
-        <p>The best way to get in touch with me is through my email. I check my email a couple of times
-        a day, so I will get back to you as soon as possible.</p>
-      
+        <h1>The Artificial Intelligence Olympiad Archive</h1>
+        <p>The AI Olympiad is one of the contests I quite like regarding the fileds of Machine Learning. The topics, challenges, and overall atmosphere of these competitions 
+          are just fantastic and perfectly align with my taste!<br>
+          Below, you'll find the problems and solutions from the Iran AI Olympiad (I don't have any plans to write the solutions to the questions of the first round as I do not find
+          the questions intresting. Though I might consider doing so some day!).<br>
+          I plan to include more content in the future, including problems from other contests.
+        </p>
 
-        <div class="contact-info">
-          <div class="contact-item">
-            <strong>Email:</strong>
-            <button class="copy-email-btn" title="Click to copy" onclick="copyEmail()">Copy my email address</button>
-          </div>
-
-          <p>Also, I post about papers I read, academic videos and videocasts I watch, my projects and other stuff I find intresting in my Telegram channel.</p>
-
-          <div class="contact-item">
-            <strong>Telegram Channel:</strong>
-            <a href="https://t.me/shayanshahrabi_channel" target="_blank" rel="noopener noreferrer">
-              @shayanshahrabi_channel
-          </div>
-        </div>
+        <h2>Iran AI Olympiad - 2nd Round</h2>
+        <ul>
+          <li>
+            IAIO 2025 - Second Round,
+            <a href="/AI_Olympiad/iran_ai_olympiad/2nd_round/2025/IAIO_01_P01.pdf" target="_blank">Part I (still working on)</a>
+            - <a href="/AI_Olympiad/iran_ai_olympiad/2nd_round/2025/IAIO_01_P02.pdf" target="_blank">Part II</a>
+          </li>
+        </ul>
       </div>
 
       <!-- Sidebar Placeholder inside the flex container -->
@@ -98,17 +72,6 @@
         document.getElementById('navbar-placeholder').innerHTML = data;
       })
       .catch(error => console.error('Error loading navigation bar:', error));
-
-    // Email copy functionality
-    function copyEmail() {
-      const reversedEmail = "moc.liamg@barhahsnayahs";
-      const email = reversedEmail.split('').reverse().join('');
-      navigator.clipboard.writeText(email).then(() => {
-        alert('Email copied to clipboard: shayanshahrab@gmail.com');
-      }).catch(() => {
-        alert('Failed to copy email. Please copy manually.');
-      });
-    }
   </script>
 </body>
 </html>

@@ -6,6 +6,7 @@
   <title>An Introduction to Git and Github – Shayan Shahrabi</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/sidebar/sidebar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -14,13 +15,9 @@
   <main class="container">
     <div class="content-wrapper">
       <div class="main-column">
-        <h1>An Introduction to Reinforcement Leanring – SBU, June 2025</h1>
-        <p style="text-align: justify;">
-          The resources and materials presented during the 
-          lecture on <strong>Git and GitHub</strong> at <strong>Shahid Beheshti University (SBU)</strong>. 
-          The lecture was accompanied by instructional slides, and supplementary video content was 
-          made available afterward to further support students’ understanding of the concepts.
-        </p>
+        <h1>An Introduction to Reinforcement Learning – SBU, June 2025</h1>
+          <p>Developed and presented this lecture on <strong>Reinforcement Learning</strong> as a supplemental session for the Machine Learning course.</p>
+          <p>The presentation was hosted at <strong>Shahid Beheshti University (SBU)</strong> to further the understanding of key concepts for fellow students.</p>
         <ul class="notes-list">
           <li>
             <a href="an_intro_to_RL.pdf" target="_blank">
@@ -30,6 +27,17 @@
         </ul>
         <p><a href="/Talks/talks.html">← Back to Lecture Notes</a></p>
       </div>
+
+      <!-- Sidebar Placeholder inside the flex container -->
+      <div id="sidebar-placeholder" style="width: 250px; vertical-align: top;"></div>
+      <script>
+        fetch('/layout/sidebar/sidebar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('sidebar-placeholder').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading sidebar:', error));
+      </script>
     </div>
   </main>
 

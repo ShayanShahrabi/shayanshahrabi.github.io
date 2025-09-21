@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problem Solving for Newbies</title>
+  <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/sidebar/sidebar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    p {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="topnav" id="navbar-placeholder"></header>
+
+  <script>
+    fetch('/layout/navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <!-- Main Layout -->
+  <main class="container">
+    <div class="content-wrapper">
+      <!-- Main Content -->
+      <div class="main-column">
+        <h1>Problem Solving for Newbie Programmers</h1>
+
+        <section>
+          <h2>Overview</h2>
+          <p>
+            A comprehensive educational series – containing more than 26 hours of videos –
+            aimed at helping beginners build a strong foundation in programming through algorithmic problem solving.
+            Designed for students with no prior coding background, it gradually introduces core topics such as input/output, conditionals, loops, recursion, arrays, file handling, and pointers.
+            The course is presented in Persian and delivered through a set of well-structured playlists.
+            Across dozens of video lessons spanning many hours of content, learners are guided through both conceptual explanations and hands-on exercises — making it ideal for students preparing for competitive programming or academic coursework.
+          </p>
+        </section>
+
+        <section>
+          <h2>Video Playlists</h2>
+          <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_TrJfkZ-_-nhtradnhjAlFe" target="_blank">📺 Part 1 – Introduction & Basics</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_T1bJkdz2j9gDcuE9A6PSR1" target="_blank">📺 Part 2 – Conditions</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_SvUMQC3QuChBisd9ogDttj" target="_blank">📺 Part 3 – Loops and Iteration</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_RbckKwdi7s3Th04K2-BQQ0" target="_blank">📺 Part 4 – Functions</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_RLdTgBPF16AiEylHYUFjj2" target="_blank">📺 Part 5 – Arrays</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_RrTg9KdXF_bx_idvVVjGcD" target="_blank">📺 Part 6 – Recursive Functions</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_RkZiD8jM-s1RHMnh_cbY4H" target="_blank">📺 Part 7 – Working with Files</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-ZT8mOfgZ_QRshOZ0eOZxvqonJF1sRx-" target="_blank">📺 Part 8 – Pointers</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Code Repository & Resources</h2>
+          <ul>
+            <li><a href="https://github.com/ShayanShahrabi/Fundamentals_of_Computer_and_Programming" target="_blank">💻 GitHub Repository</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Problem Sets</h2>
+          <p>
+            Access the accompanying exercises and problems via the Quera online judge platform:
+          </p>
+          <ul>
+            <li>
+              <a href="https://quera.org/course/add_to_course/course/17569/" target="_blank">🧠 Quera Online Judge</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar-placeholder" style="width: 250px;"></div>
+      <script>
+        fetch('/layout/sidebar/sidebar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('sidebar-placeholder').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading sidebar:', error));
+      </script>
+    </div>
+  </main>
+
+  <!-- Blog & Notes Logic -->
+  <script>
+    const blogs = [
+      { title: "About Me", url: "blog/blog1.html", date: "June 2025" },
+    ];
+    const notes = [
+      { title: "A Proof of the Decomposition Identity: TSS = ESS + RSS", url: "notes/RSS_TSS_ESS.pdf", date: "May 2025" },
+      { title: "Reinforcement Learning Lecture", url: "notes/RL_lecture.pdf", date: "May 2025" },
+    ];
+
+    const renderContent = () => {
+      const blogList = document.getElementById('latest-blogs');
+      if (blogList) {
+        blogs.forEach(blog => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = blog.url;
+          a.textContent = `${blog.title} – ${blog.date}`;
+          li.appendChild(a);
+          blogList.appendChild(li);
+        });
+      }
+
+      const notesList = document.getElementById('latest-notes');
+      if (notesList) {
+        notes.forEach(note => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = note.url;
+          a.target = "_blank";
+          a.innerHTML = `<i class="fas fa-file-pdf"></i> ${note.title} – ${note.date} (PDF)`;
+          li.appendChild(a);
+          notesList.appendChild(li);
+        });
+      }
+    };
+  </script>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('/layout/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error loading footer:', error);
+      });
+  </script>
+
+</body>
+</html>

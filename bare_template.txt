@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><!-- Page Title Here --></title>
+  <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/sidebar/sidebar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="topnav" id="navbar-placeholder"></header>
+  <script>
+    fetch('/layout/navigation_bar.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('navbar-placeholder').innerHTML = html; })
+      .catch(err => console.error('Error loading navbar:', err));
+  </script>
+
+  <!-- Main Layout -->
+  <main class="container">
+    <div class="content-wrapper">
+      <!-- Main Content Area -->
+      <div class="main-column">
+        <!-- Your page content goes here -->
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar-placeholder" style="width: 250px;"></div>
+      <script>
+        fetch('/layout/sidebar/sidebar.html')
+          .then(res => res.text())
+          .then(html => { document.getElementById('sidebar-placeholder').innerHTML = html; })
+          .catch(err => console.error('Error loading sidebar:', err));
+      </script>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('/layout/footer.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('footer-placeholder').innerHTML = html; })
+      .catch(err => console.error('Error loading footer:', err));
+  </script>
+</body>
+</html>

@@ -7,13 +7,23 @@
   <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/sidebar/sidebar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <!-- Top Navigation Bar -->
   <header class="topnav" id="navbar-placeholder"></header>
 
-  <!-- Main Layout without Sidebar -->
+  <script>
+    fetch('/layout/navigation_bar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <!-- Main Layout -->
   <main class="container">
     <div class="content-wrapper">
       <!-- Main Content -->
@@ -24,22 +34,18 @@
         <img src="images/self-portrait.png" alt="Self-portrait" class="portrait" />
 
         <p style="text-align: justify;">
-          Hello! I’m <strong>Shayan Shahrabi</strong>, a computer science bachelor’s student passionate about machine learning, artificial intelligence, and deep learning.
-        </p>
-
-        <p style="text-align: justify;">
-          I Highlight selected <a href="/Projects/projects.html">projects</a> including educational tutorials, algorithmic challenges, and learning resources.
-        </p>
-
-        <p style="text-align: justify;">
-          You can read about my experiences (teaching, research, and more) <a href="Experience/experience.html">here</a>.
+          Hello! I’m Shayan, a BSc student in Computer Science at Shahid Beheshti University (SBU).
+          My interests broadly include machine learning and deep learning, with a subtle focus on 
+          natural language processing and large language models. I enjoy learning about these topics, staying curious, 
+          and deepening my understanding through reading and exploration.<br>
         </p>
 
 
         <p style="text-align: justify;">
-          Fill free to reach out if you have any questions, suggestions, or just want to connect. 
-          I highly enjoy discussions about computer science, mathematics, and technology in general!
+          Feel free to reach out if you have any questions, suggestions, or just want to connect.<br>
+          I enjoy discussions about computer science, mathematics, and technology in general!
         </p>
+
 
         <div class="social-icons">
           <a href="https://t.me/shayanshahrabi_channel" title="Telegram" class="telegram"><i class="fab fa-telegram-plane"></i></a>
@@ -48,6 +54,17 @@
           <a href="https://github.com/shayanshahrabi" title="GitHub" class="github"><i class="fab fa-github"></i></a>
         </div>
       </div>
+
+      <!-- Sidebar Placeholder inside the flex container -->
+      <div id="sidebar-placeholder" style="width: 250px; vertical-align: top;"></div>
+      <script>
+        fetch('/layout/sidebar/sidebar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('sidebar-placeholder').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading sidebar:', error));
+      </script>
     </div>
   </main>
 
@@ -62,7 +79,6 @@
     ];
 
     const renderContent = () => {
-      // This can remain if you still want to render blog and notes lists elsewhere
       const blogList = document.getElementById('latest-blogs');
       if (blogList) {
         blogs.forEach(blog => {
@@ -88,14 +104,6 @@
         });
       }
     };
-
-    // Load navbar
-    fetch('/layout/navigation_bar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-      })
-      .catch(error => console.error('Error loading navigation bar:', error));
   </script>
 
   <!-- Footer -->

@@ -1,0 +1,49 @@
+/* /sidebar/sidebar.css */
+
+/* Layout container must be flex in your main stylesheet */
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Main content stays constrained */
+.main-column {
+  flex: 1;
+  max-width: 70%;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  right: 2rem;
+  top: 100px; /* adjust based on navbar height */
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive: hide sidebar on small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-column {
+    max-width: 100%;
+  }
+}
