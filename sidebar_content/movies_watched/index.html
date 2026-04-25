@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movies Watched</title>
+  <link rel="icon" href="/images/favicon01.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/sidebar/sidebar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header class="topnav" id="navbar-placeholder"></header>
+  <script>
+    fetch('/layout/navigation_bar.html')
+      .then(res => res.text())
+      .then(html => { document.getElementById('navbar-placeholder').innerHTML = html; })
+      .catch(err => console.error('Error loading navbar:', err));
+  </script>
+
+  <!-- Main Layout -->
+  <main class="container">
+    <div class="content-wrapper">
+      <!-- Main Content Area -->
+      <div class="main-column">
+        <h1>Movies Watched</h1>
+        Here is a list of movies I've watched and would like to suggest to others, seperated by 
+        release year (so you can search for the titles easier).
+
+        <section>
+          <h2>1997</h2>
+            <ul>
+              <li>Starwars A New Hope</li>
+            </ul>    
+        </section>
+
+        <section>
+          <h2>2006</h2>
+            <ul>
+              <li>The Devil Wears Prada</li>
+            </ul>    
+        </section>
+
+        <section>
+          <h2>2007</h2>
+            <ul>
+              <li>Transformers</li>
+              <li>Spiderman 3</li>
+            </ul>    
+        </section>
+
+        <section>
+          <h2>2008</h2>
+            <ul>
+              <li>The Dark Knight</li>
+              <li>Ironman</li>
+            </ul>    
+        </section>
+
+        <section>
+          <h2>2010</h2>
+            <ul>
+              <li>The Social Network (One of my favourites)</li>
+              <li>Inception</li>
+              <li>Ironman 2</li>
+            </ul>    
+        </section>
+
+
+        <section>
+        <h2>2012</h2>
+        <ul>
+          <li>The Hunger Games</li>
+          <li>The Amazing Spiderman</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2013</h2>
+        <ul>
+          <li>The Wolf of Wallstreet (One of my favourites)</li>
+          <li>Man of Steel</li>
+          <li>Ironman 3</li>
+          <li>Her</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2014</h2>
+        <ul>
+          <li>Need for Speed</li>
+          <li>The Imitation Game</li>
+          <li>The Threory of Everything</li>
+          <li>The Amazing Spiderman 2</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2015</h2>
+        <ul>
+          <li>Marvel Avengers Age of Ultron</li>
+          <li>Steve Jobs</li>
+          <li>The Little Prince</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2017</h2>
+        <ul>
+          <li>Baby Driver</li>
+          <li>Spiderman Homecoming</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2018</h2>
+        <ul>
+          <li>Bohemian Rhapsody</li>
+          <li>Bumblebee</li>
+          <li>Incredibles II</li>
+          <li>SpiderMan Into the Spider Verse</li>
+          <li>Ready Player One (Highly recommend reading the book first)</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2019</h2>
+        <ul>
+          <li>Joker</li>
+          <li>Spiderman Far from Home</li>
+          <li>How to Train Your Dragon 3: The Hidden World</li>
+          <li>Marvel Avengers Endgame</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2022</h2>
+        <ul>
+          <li>Black Adam</li>
+          <li>Elvis</li>
+          <li>The Batman</li>
+        </ul>
+        </section>
+        
+        <section>
+        <h2>2023</h2>
+        <ul>
+          <li>Oppenheimer</li>
+          <li>Transformers Rise of the Beasts</li>
+          <li>SpiderMan Across The Spider Verse</li>
+          <li>Napoleon</li>
+          <li>Barbie</li>
+        </ul>
+        </section>
+
+        <section>
+        <h2>2024</h2>
+        <ul>
+          <li>Anora</li>
+          <li>Transformers-One</li>
+        </ul>
+        </section>
+
+        <section>
+          <h2>2025</h2>
+          <ul>
+            <li>Superman</li>
+            <li>F1 (Hanz Zimmer is the man behind the amazing music!)</li>
+          </ul>
+        </section>
+ 
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar-placeholder" style="width: 250px;"></div>
+      <script>
+        fetch('/layout/sidebar/sidebar.html')
+          .then(res => res.text())
+          .then(html => { document.getElementById('sidebar-placeholder').innerHTML = html; })
+          .catch(err => console.error('Error loading sidebar:', err));
+      </script>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align:center; margin-top: 2em; font-size: 0.9em; color: #666;">
+    <p>&copy; <span id="start-year">2025</span><span id="year-range"></span> Shayan Shahrabi. All rights reserved.</p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startYear = 2023;
+        const currentYear = new Date().getFullYear();
+        const yearRange = currentYear > startYear ? ` - ${currentYear}` : '';
+        document.getElementById('year-range').textContent = yearRange;
+      });
+    </script>
+  </footer>
+</body>
+</html>
