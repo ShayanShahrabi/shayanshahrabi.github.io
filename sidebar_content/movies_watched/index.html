@@ -29,8 +29,8 @@
         Here is a list of movies and series I've watched and would like to suggest to others.
 
         <section class="series-section">
-          <h2>Series Watched</h2>
-          <ul>
+          <h2>Series Watched (<span id="series-count">0</span> titles in total)</h2>
+          <ul id="series-list">
             <li><strong>The Big Bang Theory</strong> (2007-2019)</li>
             <li><strong>Money Heist (La Casa de Papel)</strong> (2017-2021)</li>
             <li><strong>Arcane</strong> (2021-2024)</li>
@@ -42,11 +42,11 @@
 
         <hr style="margin: 2em 0;">
 
-        <h2 style="margin-top: 2em;">Movies by Release Year</h2>
+        <h2 style="margin-top: 2em;">Movies by Release Year (<span id="movie-count">0</span> titels in total)</h2>
 
         <section>
           <h2>2025</h2>
-          <ul>
+          <ul class="movie-list">
             <li>Superman</li>
             <li>F1 (Hanz Zimmer is the man behind the amazing music!)</li>
           </ul>
@@ -54,7 +54,7 @@
 
         <section>
         <h2>2024</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Anora</li>
           <li>Transformers-One</li>
         </ul>
@@ -62,7 +62,7 @@
 
         <section>
         <h2>2023</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Oppenheimer</li>
           <li>Transformers Rise of the Beasts</li>
           <li>SpiderMan Across The Spider Verse</li>
@@ -73,7 +73,7 @@
 
         <section>
         <h2>2022</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Black Adam</li>
           <li>Elvis</li>
           <li>The Batman</li>
@@ -81,46 +81,66 @@
         </section>
 
         <section>
+        <h2>2021</h2>
+        <ul class="movie-list">
+          <li>Red Notice</li>
+        </ul>
+        </section>
+
+        <section>
         <h2>2019</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Joker</li>
           <li>Spiderman Far from Home</li>
           <li>How to Train Your Dragon 3: The Hidden World</li>
           <li>Marvel Avengers Endgame</li>
+          <li>Captain Marvel</li>
         </ul>
         </section>
 
         <section>
         <h2>2018</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Bohemian Rhapsody</li>
           <li>Bumblebee</li>
           <li>Incredibles II</li>
           <li>SpiderMan Into the Spider Verse</li>
           <li>Ready Player One (Highly recommend reading the book first)</li>
+          <li>Black Panther</li>
         </ul>
         </section>
 
         <section>
         <h2>2017</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Baby Driver</li>
           <li>Spiderman Homecoming</li>
         </ul>
         </section>
 
         <section>
+        <h2>2016</h2>
+        <ul class="movie-list">
+          <li>Doctor Strange</li>
+          <li>Batman Vs Superman Dawn of Justice</li>
+          <li>Finding Dory</li>
+          <li>Kung Fu Panda 3</li>
+        </ul>
+        </section>
+
+        <section>
         <h2>2015</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Marvel Avengers Age of Ultron</li>
           <li>Steve Jobs</li>
           <li>The Little Prince</li>
+          <li>Inside-Out</li>
         </ul>
         </section>
 
         <section>
         <h2>2014</h2>
-        <ul>
+        <ul class="movie-list">
           <li>Need for Speed</li>
           <li>The Imitation Game</li>
           <li>The Threory of Everything</li>
@@ -132,7 +152,7 @@
 
         <section>
         <h2>2013</h2>
-        <ul>
+        <ul class="movie-list">
           <li>The Wolf of Wallstreet (One of my favourites)</li>
           <li>Man of Steel</li>
           <li>Ironman 3</li>
@@ -142,7 +162,7 @@
 
         <section>
         <h2>2012</h2>
-        <ul>
+        <ul class="movie-list">
           <li>The Hunger Games</li>
           <li>The Amazing Spiderman</li>
         </ul>
@@ -150,7 +170,7 @@
 
         <section>
           <h2>2010</h2>
-            <ul>
+            <ul class="movie-list">
               <li>The Social Network (One of my favourites)</li>
               <li>How to Train Your Dragon</li>
               <li>Inception</li>
@@ -160,15 +180,16 @@
 
         <section>
           <h2>2008</h2>
-            <ul>
+            <ul class="movie-list">
               <li>The Dark Knight</li>
               <li>Ironman</li>
+              <li>Kung Fu Panda</li>
             </ul>    
         </section>
 
         <section>
           <h2>2007</h2>
-            <ul>
+            <ul class="movie-list">
               <li>Transformers</li>
               <li>Spiderman 3</li>
             </ul>    
@@ -176,46 +197,62 @@
 
         <section>
           <h2>2006</h2>
-            <ul>
+            <ul class="movie-list">
               <li>The Devil Wears Prada</li>
             </ul>    
         </section>
 
         <section>
           <h2>2004</h2>
-            <ul>
+            <ul class="movie-list">
               <li>Spider-Man 2</li>
             </ul>    
         </section>
 
         <section>
           <h2>2002</h2>
-            <ul>
+            <ul class="movie-list">
+              <li>Pirates of the Carribbean: The Curse of the Black Pearl</li>
+            </ul>    
+        </section>
+
+        <section>
+          <h2>2002</h2>
+            <ul class="movie-list">
               <li>Spider-Man</li>
             </ul>    
         </section>
 
         <section>
           <h2>2001</h2>
-            <ul>
-              <li>Harry Potter and the Sorcerer’s Stone</li>
+            <ul class="movie-list">
+              <li>Harry Potter and the Sorcerer's Stone</li>
               <li>A Beautiful Mind</li>
             </ul>    
         </section>
 
         <section>
           <h2>1999</h2>
-            <ul>
+            <ul class="movie-list">
               <li>The Matrix</li>
             </ul>    
         </section>
 
         <section>
-          <h2>1997</h2>
-            <ul>
+          <h2>1985</h2>
+            <ul class="movie-list">
+              <li>Back to The Future</li>
+            </ul>    
+        </section>
+
+        <section>
+          <h2>1977</h2>
+            <ul class="movie-list">
               <li>Starwars A New Hope</li>
             </ul>    
         </section>
+
+        
  
       </div>
 
@@ -239,6 +276,19 @@
         const currentYear = new Date().getFullYear();
         const yearRange = currentYear > startYear ? ` - ${currentYear}` : '';
         document.getElementById('year-range').textContent = yearRange;
+
+        // Count movies
+        const movieLists = document.querySelectorAll('.movie-list');
+        let movieCount = 0;
+        movieLists.forEach(list => {
+          movieCount += list.querySelectorAll('li').length;
+        });
+        document.getElementById('movie-count').textContent = movieCount;
+
+        // Count series
+        const seriesList = document.getElementById('series-list');
+        const seriesCount = seriesList.querySelectorAll('li').length;
+        document.getElementById('series-count').textContent = seriesCount;
       });
     </script>
   </footer>
