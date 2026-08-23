@@ -122,12 +122,14 @@ blockquote {
 .social-icons .youtube { color: #FF0000; }
 .social-icons .linkedin { color: #0077b5; }
 .social-icons .github { color: #333; }
+.social-icons .google-scholar { color: #4285F4; }
 
 .social-icons .email:hover { color: #a33; transform: scale(1.2); }
 .social-icons .telegram:hover { color: #006699; transform: scale(1.2); }
 .social-icons .youtube:hover { color: #cc0000; transform: scale(1.2); }
 .social-icons .linkedin:hover { color: #005582; transform: scale(1.2); }
 .social-icons .github:hover { color: #000; transform: scale(1.2); }
+.social-icons .google-scholar:hover { color: #2a56c6; transform: scale(1.2); }
 
 /* Coming Soon Section */
 .coming-soon {
