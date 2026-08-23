@@ -26,29 +26,54 @@
       <!-- Main Content Area -->
       <div class="main-column">
         
+        <!-- ========== NEW PAPER – NOW AT THE TOP ========== -->
         <article class="publication">
-
-          <!-- FLEX ROW FOR IMAGE + CONTENT -->
           <div style="display: flex; gap: 20px; align-items: flex-start;">
 
-            <!-- LEFT COLUMN: THUMBNAIL -->
+            <img 
+              src="/Publications/images/compress_and_forget.png" 
+              alt="Paper thumbnail"
+              style="width: 350px; height: auto; border-radius: 8px;"
+            >
+
+            <div class="pub-details">
+
+              <h3 class="pub-title">
+                <strong>Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs</strong>
+              </h3>
+
+              <p class="pub-authors"><strong>Shayan Shahrabi-Farahani, Dara Rahmati</strong></p>
+
+              <p class="pub-venue">
+                <a href="https://arxiv.org/abs/2608.18578">arXiv</a>
+                &nbsp;
+                <a href="https://github.com/ShayanShahrabi/compress-and-forget">Code</a>
+                &nbsp;
+              </p>
+
+              <p class="pub-abstract">
+                Post-training quantization degrades large language models under proactive interference—a failure mode where prior overwrites impair retrieval. Across three models (Qwen2.5, Mistral, Phi-3.5), we find INT4 quantization significantly reduces accuracy under high interference (e.g., Qwen drops from 81.0% to 68.3%), with INT8 also showing smaller but real penalties in two of three models. This effect is semantically specific, tied to increased same-key intrusion errors, and arises from the quantized transformer backbone rather than the output layer. Our results warn that 4-bit quantization can compromise performance on long, updatable, semantically dense contexts, even when aggregate benchmark accuracy appears largely intact.
+              </p>
+
+            </div>
+          </div>
+        </article>
+        <!-- ========== END NEW PAPER ========== -->
+
+        <!-- FIRST PAPER (existing) – now second -->
+        <article class="publication" style="margin-top: 2.5rem;">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
             <img 
               src="/Publications/images/Cognitive_Diversity_LLM.png" 
               alt="Paper image"
               style="width: 350px; height: auto; border-radius: 8px;"
             >
-
-            <!-- RIGHT COLUMN: DETAILS -->
             <div class="pub-details">
-
               <h3 class="pub-title">
                 <strong>Cognitive Diversity in Artificial Minds - Investigating the Performance of Large Language Models Under Memory Constraints</strong>
               </h3>
-
               <span class="award-badge">🏆 Best Paper Award</span>
-
-              <p class="pub-authors"><strong>Shayan Shahrabi</strong></p>
-
+              <p class="pub-authors"><strong>Shayan Shahrabi-Farahani</strong></p>
               <p class="pub-venue">
                 Helli Neuroscience Congress (HNC 2025)
                 &nbsp;
@@ -56,15 +81,12 @@
                 &nbsp;
                 <a href="/Publications/slides/Cognitive_Diversity_LLM.pdf">Slides</a>
               </p>
-
               <p class="pub-abstract">
                 Measuring active memory of 4 different LLMs (GPT-2, GPT-Neo, Phi-2, distilBERT)
                 in a sequence prediction task, similar to digit span.
               </p>
-
             </div>
           </div>
-
         </article>
 
       </div>
